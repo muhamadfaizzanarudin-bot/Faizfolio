@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Faiz — Professional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Faiz">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Bar with date/time -->
+  <div class="topbar" aria-label="top information bar">
+    <div class="container">
+      <span class="role">Information Management Student</span>
+      <span class="divider">|</span>
+      <span id="date-time" aria-live="polite">Loading time…</span>
+    </div>
+  </div>
+
+  <!-- Header and Navigation -->
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="branding">
+        <a class="logo" href="faiz">faiz</a>
+      </div>
+      <nav class="nav" aria-label="main">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="biodata.html">Biodata</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="family.html">Family</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="interest.html">interest</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>“Just keep Trying Everything”</h1>
+      <p>
+        Greetings from my portfolio. Discover my experience, abilities, training,
+        and projects — all crafted with care and professionalism.
+      </p>
+    </div>
+  </section>
+
+  <section class="profile">
+  <div class="container profile-grid">
+    
+    <!-- Left Column: Info Boxes -->
+    <div class="profile-text">
+      <h2>Professional Profile</h2>
+      <p>
+        I’m Faiz, an Information Management student at UiTM. I took a diploma in
+        Information Science and am now a final semester student. This is a profile
+        or self-introduction for everyone to get to know me better.
+      </p>
+
+      <div class="details two-col">
+        <!-- Personal Info Box -->
+        <div class="info-box">
+          <h3>Personal Info</h3>
+          <ul>
+            <li><strong>Full name:</strong> Muhammad Faiz bin Zanarudin</li>
+            <li><strong>Nationality:</strong> Malaysian</li>
+            <li><strong>Religion:</strong> Islam</li>
+            <li><strong>Gender:</strong> Male</li>
+            <li><strong>Location:</strong> Ampang, Selangor</li>
+          </ul>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="info-box">
+          <h3>Contact</h3>
+          <ul>
+            <li><strong>Email:</strong> muhammadfaizzanarudin@gmail.com</li>
+            <li><strong>Phone:</strong> +60 182105696</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Profile Photo -->
+    <figure class="profile-photo">
+      <img src="faiz.jpeg" alt="faiz.jpeg">
+      <figcaption>Faiz — Information Management Student</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+      
+      
+    </div>
+  </section>
+
+  <!-- Quick Links / CTAs -->
+  <section class="cta-links">
+    <div class="container cta-grid">
+      <a class="card link-card" href="experience.html">
+        <span class="icon">💼</span>
+        <h3>Experience</h3>
+        <p>Discover my professional journey and internships.</p>
+      </a>
+      <a class="card link-card" href="education.html">
+        <span class="icon">🎓</span>
+        <h3>Education</h3>
+        <p>Explore my academic background and achievements.</p>
+      </a>
+      <a class="card link-card" href="gallery.html">
+        <span class="icon">🖼️</span>
+        <h3>Gallery</h3>
+        <p>Browse my curated photos and media.</p>
+      <a class="card link-card" href="family.html">
+        <span class="icon">👩‍👩‍👧‍👧</span>
+        <h3>Family</h3>
+        <p>My beloved family members.</p>
+      <a class="card link-card" href="interest.html">
+        <span class="icon">🗄️</span>
+        <h3>Interest</h3>
+        <p>Beyond academics and work, here are my passions.</p>
+      <a class="card link-card" href="contact.html">
+        <span class="icon">📲</span>
+        <h3>Contact</h3>
+        <p>Get in touch with me through these channels.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Faizzanarudin |  Portfolio</p>
+      <p>Designed with purpose | IMD318</p>
+      <p class="statement">
+        This website is created by Faiz, UiTM student (IMD318). All information is accurate to the best of my knowledge.
+      </p>
+      <nav class="footer-nav" aria-label="footer">
+        <a href="https://wa.me/60182195696">Contact</a>
+        <a href="mailto:muhammadfaizzanarudin@gmail.com">Email</a>
+        <a href="https://www.instagram.com/mfxxzzz?igsh=MXdqcjNydXlsejZ5bg%3D%3D&utm_source=qr">Instagram</a>
+      </nav>
+      <p class="dates">Created: Dec 2025 • Last updated: Dec 2025</p>
+    </div>
+  </footer>
+
+  <!-- Minimal Script: Time display -->
+  <script>
+    function updateDateTime() {
+      const el = document.getElementById('date-time');
+      const now = new Date();
+      el.textContent = now.toLocaleString();
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
+</body>
+</html>
