@@ -4,6 +4,46 @@
   <meta charset="UTF-8">
   <title>Gallery - Faiz's Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Tambahan untuk popup */
+    .popup {
+      display: none; /* sembunyi default */
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 80%;
+      border: 5px solid white;
+      border-radius: 10px;
+    }
+
+    .popup span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .gallery-grid img {
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -15,14 +55,14 @@
   <!-- Navigation -->
   <nav>
     <ul>
-      <li><a href="index.html" >Home</a></li>
-          <li><a href="biodata.html">Biodata</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="education.html">Education</a></li>
-          <li><a href="family.html">Family</a></li>
-          <li><a href="gallery.html"class="active">gallery</a></li>
-          <li><a href="interest.html">interest</a></li>
-          <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="biodata.html">Biodata</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="family.html">Family</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="interest.html">Interest</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
@@ -38,15 +78,48 @@
       <div class="gallery-item"><img src="gallery7.jpeg" alt="Gallery 7"></div>
       <div class="gallery-item"><img src="gallery8.jpeg" alt="Gallery 8"></div>
       <div class="gallery-item"><img src="gallery9.jpeg" alt="Gallery 9"></div>
-      <div class="gallery-item"><img src="gallery10.jpeg" alt="Gallery 9"></div>
-      <div class="gallery-item"><img src="gallery11.jpeg" alt="Gallery 9"></div>
-      <div class="gallery-item"><img src="gallery12.jpeg" alt="Gallery 9"></div>
+      <div class="gallery-item"><img src="gallery10.jpeg" alt="Gallery 10"></div>
+      <div class="gallery-item"><img src="gallery11.jpeg" alt="Gallery 11"></div>
+      <div class="gallery-item"><img src="gallery12.jpeg" alt="Gallery 12"></div>
     </div>
   </main>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <span id="close">&times;</span>
+    <img id="popup-img" src="" alt="Popup Image">
+  </div>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Faizzanarudin | Portfolio</p>
   </footer>
+
+  <script>
+    // Ambil semua gambar
+    const images = document.querySelectorAll('.gallery-grid img');
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popup-img');
+    const closeBtn = document.getElementById('close');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        popup.style.display = 'flex';
+        popupImg.src = img.src;
+        popupImg.alt = img.alt;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    // Tutup popup bila klik luar gambar
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
